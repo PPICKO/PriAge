@@ -233,12 +233,12 @@ class GDPRCompliantTokenGenerator:
         - session_id: unique session identifier
 
         NO personal data:
-        ❌ NO date of birth
-        ❌ NO age (exact years)
-        ❌ NO name
-        ❌ NO ID number
-        ❌ NO facial biometrics
-        ❌ NO document images
+        NO date of birth
+        NO age (exact years)
+        NO name
+        NO ID number
+        NO facial biometrics
+        NO document images
 
         Args:
             is_adult: Boolean age verification result (True if ≥18)
