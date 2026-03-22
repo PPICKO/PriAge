@@ -817,12 +817,12 @@ outputs/logs/
 
 ### Q: Is this GDPR compliant?
 **A:** Yes. The system complies with:
-- Article 5(1)(c) - Data Minimization ✓
-- Article 5(1)(e) - Storage Limitation ✓
-- Article 9 - Special Category Data (Biometric) ✓
-- Article 17 - Right to Erasure ✓
-- Article 25 - Data Protection by Design ✓
-- Article 32 - Security of Processing ✓
+- Article 5(1)(c) - Data Minimization
+- Article 5(1)(e) - Storage Limitation
+- Article 9 - Special Category Data (Biometric)
+- Article 17 - Right to Erasure
+- Article 25 - Data Protection by Design
+- Article 32 - Security of Processing
 
 ---
 
