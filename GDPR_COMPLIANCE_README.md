@@ -50,8 +50,8 @@ Verify that the ID card is a physical document, not a screen reproduction or pri
    - Saves hologram detection results to `outputs/hologram_YYYYMMDD_HHMMSS/`
 
 4. **Verification Result**
-   - ✅ **PASS:** Real ID card detected (hologram present)
-   - ❌ **FAIL:** No hologram detected (screen/photo/fake ID)
+   - **PASS:** Real ID card detected (hologram present)
+   - **FAIL:** No hologram detected (screen/photo/fake ID)
 
 ### Files Created (Phase 1)
 ```
@@ -149,7 +149,7 @@ outputs/snapshot_20241210_120534/
 
 ### Early Exit (MINOR Detected)
 If age < 18:
-- ❌ **Verification STOPS**
+- **Verification STOPS**
 - No token generated
 - No facial recognition performed
 - User informed: "MINOR DETECTED - Verification cannot proceed"
@@ -180,10 +180,10 @@ Verify that the person presenting the ID is the same person shown in the ID phot
 4. **Anti-Spoofing Check (Silent-Face-Anti-Spoofing)**
    - Analyzes live face for liveness
    - Detects if face is:
-     - Real person ✅
-     - Photo held up to camera ❌
-     - Video played on screen ❌
-     - 3D mask ❌
+     - Real person 
+     - Photo held up to camera 
+     - Video played on screen
+     - 3D mask
    - Outputs liveness score (0-1, where >0.5 = real)
 
 5. **Face Embedding Extraction (FaceNet)**
@@ -200,8 +200,8 @@ Verify that the person presenting the ID is the same person shown in the ID phot
    - Lower distance = more similar faces
 
 7. **Verification Decision**
-   - ✅ **PASS:** Distance ≤ threshold AND liveness score > 0.5
-   - ❌ **FAIL:** Distance > threshold OR liveness score ≤ 0.5
+   - **PASS:** Distance ≤ threshold AND liveness score > 0.5
+   - **FAIL:** Distance > threshold OR liveness score ≤ 0.5
 
 8. **Comparison Images Saved**
    - Saves side-by-side comparison for audit
@@ -252,12 +252,12 @@ Generate an encrypted verification token containing ONLY the minimum necessary d
 1. **Data Minimization**
    - Extracts ONLY the verification result: `is_adult: true/false`
    - **Discards all other data:**
-     - ❌ Date of birth
-     - ❌ Age (specific years)
-     - ❌ Name
-     - ❌ ID photo
-     - ❌ Facial embeddings
-     - ❌ Any other PII
+     - Date of birth
+     - Age (specific years)
+     - Name
+     - ID photo
+     - Facial embeddings
+     - Any other PII
 
 2. **Token Data Structure**
 ```json
@@ -314,9 +314,9 @@ outputs/tokens/
 - **Sensitivity:** LOW (contains no personal information)
 - **Retention:** 24 hours (automatic expiration)
 - **Compliance:**
-  - ✅ Article 5(1)(c) - Data Minimization
-  - ✅ Article 32 - Security of Processing
-  - ✅ Article 25 - Data Protection by Design
+  - Article 5(1)(c) - Data Minimization
+  - Article 32 - Security of Processing
+  - Article 25 - Data Protection by Design
 
 ---
 
@@ -498,68 +498,68 @@ END
 ### Article 5 - Principles of Processing
 
 #### (a) Lawfulness, Fairness, Transparency
-- ✅ User gives explicit consent before verification
-- ✅ Purpose clearly explained (age verification)
-- ✅ Processing steps transparent and documented
+- User gives explicit consent before verification
+- Purpose clearly explained (age verification)
+- Processing steps transparent and documented
 
 #### (b) Purpose Limitation
-- ✅ Data used ONLY for age verification
-- ✅ No secondary processing
-- ✅ No data sharing with third parties
+- Data used ONLY for age verification
+- No secondary processing
+- No data sharing with third parties
 
 #### (c) Data Minimization
-- ✅ Token contains ONLY `is_adult` boolean
-- ✅ No storage of DOB, age, name, or biometric data
-- ✅ Minimal data collection at all stages
+- Token contains ONLY `is_adult` boolean
+- No storage of DOB, age, name, or biometric data
+- Minimal data collection at all stages
 
 #### (d) Accuracy
-- ✅ OCR error correction for accurate DOB extraction
-- ✅ Multiple verification steps (hologram, face, liveness)
-- ✅ High-confidence thresholds (≥80%)
+- OCR error correction for accurate DOB extraction
+- Multiple verification steps (hologram, face, liveness)
+- High-confidence thresholds (≥80%)
 
 #### (e) Storage Limitation
-- ✅ **Personal data deleted immediately after token generation**
-- ✅ **DoD 5220.22-M secure deletion (3-pass overwrite)**
-- ✅ Token expires after 24 hours
-- ✅ Automated cleanup available
+- **Personal data deleted immediately after token generation**
+- **DoD 5220.22-M secure deletion (3-pass overwrite)**
+- Token expires after 24 hours
+- Automated cleanup available
 
 #### (f) Integrity and Confidentiality
-- ✅ AES-256-GCM encryption
-- ✅ PBKDF2-SHA256 key derivation (100,000 iterations)
-- ✅ Secure deletion prevents data recovery
-- ✅ Single-use tokens prevent replay attacks
+- AES-256-GCM encryption
+- PBKDF2-SHA256 key derivation (100,000 iterations)
+- Secure deletion prevents data recovery
+- Single-use tokens prevent replay attacks
 
 ### Article 9 - Special Category Data (Biometric)
 
-- ✅ Explicit consent obtained for facial recognition
-- ✅ Biometric data (face embeddings) processed in-memory only
-- ✅ **Facial images deleted immediately after verification**
-- ✅ No long-term biometric storage
-- ✅ Processing limited to verification purpose only
+- Explicit consent obtained for facial recognition
+- Biometric data (face embeddings) processed in-memory only
+- **Facial images deleted immediately after verification**
+- No long-term biometric storage
+- Processing limited to verification purpose only
 
 ### Article 17 - Right to Erasure
 
-- ✅ User can request immediate data deletion
-- ✅ Automated deletion via `gdpr_data_cleanup.py`
-- ✅ **Deletion is irreversible (DoD standard)**
-- ✅ Cryptographic verification of deletion
-- ✅ Audit trail for all deletions
+- User can request immediate data deletion
+- Automated deletion via `gdpr_data_cleanup.py`
+- **Deletion is irreversible (DoD standard)**
+- Cryptographic verification of deletion
+- Audit trail for all deletions
 
 ### Article 25 - Data Protection by Design
 
-- ✅ Privacy built into system architecture
-- ✅ Data minimization enforced at code level
-- ✅ Secure deletion designed into pipeline
-- ✅ Encryption by default
-- ✅ No unnecessary data collection
+- Privacy built into system architecture
+- Data minimization enforced at code level
+- Secure deletion designed into pipeline
+- Encryption by default
+- No unnecessary data collection
 
 ### Article 32 - Security of Processing
 
-- ✅ AES-256-GCM authenticated encryption
-- ✅ PBKDF2-SHA256 key derivation
-- ✅ DoD 5220.22-M secure deletion
-- ✅ Anti-spoofing protection
-- ✅ Single-use tokens with expiration
+- AES-256-GCM authenticated encryption
+- PBKDF2-SHA256 key derivation
+- DoD 5220.22-M secure deletion
+- Anti-spoofing protection
+- Single-use tokens with expiration
 
 ---
 
@@ -675,10 +675,10 @@ python decrypt_qr_token.py
 5. Verifies: Token not expired, not already used
 
 **Security:**
-- ✅ Requires both QR code AND PIN (two-factor)
-- ✅ Single-use (cannot be reused)
-- ✅ 24-hour expiration
-- ✅ Encrypted with AES-256-GCM
+- Requires both QR code AND PIN (two-factor)
+- Single-use (cannot be reused)
+- 24-hour expiration
+- Encrypted with AES-256-GCM
 
 ---
 
@@ -747,25 +747,25 @@ Report saved to: `gdpr_compliance_report_YYYYMMDD_HHMMSS.txt`
 ## Security Guarantees
 
 ### Data Cannot Be Recovered
-- ✅ DoD 5220.22-M standard (military-grade)
-- ✅ 3-pass overwrite (zeros → ones → random)
-- ✅ Cryptographic verification of deletion
-- ✅ File system metadata overwritten
-- ✅ Forensic recovery: IMPOSSIBLE
+- DoD 5220.22-M standard (military-grade)
+- 3-pass overwrite (zeros → ones → random)
+- Cryptographic verification of deletion
+- File system metadata overwritten
+- Forensic recovery: IMPOSSIBLE
 
 ### Token Security
-- ✅ AES-256-GCM (NSA approved for TOP SECRET)
-- ✅ PBKDF2-SHA256 key derivation (OWASP recommended)
-- ✅ 100,000 iterations (prevents brute-force)
-- ✅ Single-use enforcement
-- ✅ 24-hour automatic expiration
+- AES-256-GCM (NSA approved for TOP SECRET)
+- PBKDF2-SHA256 key derivation (OWASP recommended)
+- 100,000 iterations (prevents brute-force)
+- Single-use enforcement
+- 24-hour automatic expiration
 
 ### Privacy Guarantees
-- ✅ No personal data stored
-- ✅ No biometric database
-- ✅ No tracking or profiling
-- ✅ No data sharing
-- ✅ Complete data deletion
+- No personal data stored
+- No biometric database
+- No tracking or profiling
+- No data sharing
+- Complete data deletion
 
 ---
 
