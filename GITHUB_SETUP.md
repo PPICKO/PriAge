@@ -338,8 +338,6 @@ Repository ready for:
 - Model file distribution
 - Public release
 
-All dates updated to **2026** ✓
-
 ---
 
 **Last Updated:** March 22, 2026
