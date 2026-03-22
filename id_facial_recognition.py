@@ -10,7 +10,6 @@ Features:
 - Silent-Face-Anti-Spoofing for real/fake face detection
 - Rejects screen/photo attacks
 
-Author: Priscila PINTO ICKOWICZ
 """
 
 import cv2
