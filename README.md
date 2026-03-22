@@ -5,7 +5,10 @@
 [![GDPR](https://img.shields.io/badge/GDPR-Compliant-success.svg)](GDPR_COMPLIANCE_README.md)
 [![Status](https://img.shields.io/badge/Status-Research-orange.svg)](https://github.com/PPICKO/PriAge)
 
-A privacy-preserving age verification system that verifies if someone is 18+ **without storing personal data**, using a GDPR-compliant 5-phase AI pipeline.
+A GDPR-compliant age verification system using AI-based identity document processing and encrypted token exchange. Preserving age verification system that verifies if someone is 18+ **without storing personal data**, using a GDPR-compliant 5-phase AI pipeline.
+
+Master's Thesis Project - Université Libre de Bruxelles
+Author: Priscila PINTO ICKOWICZ
 
 ---
 
