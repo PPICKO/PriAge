@@ -131,7 +131,7 @@ See [GDPR_COMPLIANCE_README.md](GDPR_COMPLIANCE_README.md) for complete document
 
 ---
 
-## 📖 Usage Examples
+## Usage Examples
 
 ### GUI Application
 
