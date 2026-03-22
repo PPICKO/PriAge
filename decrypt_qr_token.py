@@ -48,7 +48,7 @@ class QRTokenDecryptor:
 
         cap = cv2.VideoCapture(0)
         if not cap.isOpened():
-            print("❌ Failed to open camera!")
+            print("Failed to open camera!")
             return None
 
         qr_data = None
@@ -73,7 +73,7 @@ class QRTokenDecryptor:
                     qr_data = obj.data.decode('utf-8')
                     cv2.putText(frame, "QR CODE DETECTED!", (10, 30),
                                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-                    print("✓ QR code detected!")
+                    print("QR code detected!")
                     break
 
                 # Display instructions
@@ -112,18 +112,18 @@ class QRTokenDecryptor:
 
         img = cv2.imread(str(file_path))
         if img is None:
-            print(f"❌ Failed to load image: {file_path}")
+            print(f" Failed to load image: {file_path}")
             return None
 
         # Decode QR code
         decoded_objects = pyzbar.decode(img)
 
         if not decoded_objects:
-            print("❌ No QR code found in image")
+            print(" No QR code found in image")
             return None
 
         qr_data = decoded_objects[0].data.decode('utf-8')
-        print("✓ QR code loaded successfully")
+        print(" QR code loaded successfully")
 
         return qr_data
 
@@ -159,10 +159,10 @@ class QRTokenDecryptor:
             return decrypted_data
 
         except json.JSONDecodeError:
-            print("❌ Invalid QR code format (not JSON)")
+            print(" Invalid QR code format (not JSON)")
             return None
         except Exception as e:
-            print(f"❌ Decryption failed: {e}")
+            print(f" Decryption failed: {e}")
             return None
 
     def display_decrypted_data(self, data: dict):
@@ -173,7 +173,7 @@ class QRTokenDecryptor:
             data: Decrypted token data
         """
         print("\n" + "=" * 70)
-        print("✓ DECRYPTION SUCCESSFUL!")
+        print(" DECRYPTION SUCCESSFUL!")
         print("=" * 70)
         print()
         print("VERIFICATION RESULT:")
@@ -207,12 +207,12 @@ class QRTokenDecryptor:
         violations = [field for field in prohibited_fields if field in data]
 
         if not violations:
-            print("  ✓ Data minimized: ONLY is_adult boolean")
-            print("  ✓ NO age, DOB, name, or biometric data")
-            print("  ✓ GDPR Article 5(1)(c) compliant")
+            print("  Data minimized: ONLY is_adult boolean")
+            print("  NO age, DOB, name, or biometric data")
+            print("  GDPR Article 5(1)(c) compliant")
         else:
-            print(f"  ✗ WARNING: Found prohibited fields: {violations}")
-            print("  ✗ Not GDPR compliant!")
+            print(f"  WARNING: Found prohibited fields: {violations}")
+            print("   Not GDPR compliant!")
 
         print()
         print("=" * 70)
@@ -266,16 +266,16 @@ def main():
             if 0 <= idx < len(token_files):
                 file_path = token_files[idx]
             else:
-                print("❌ Invalid number")
+                print(" Invalid number")
                 return 1
 
         qr_data = decryptor.load_qr_from_file(Path(file_path))
     else:
-        print("❌ Invalid choice")
+        print(" Invalid choice")
         return 1
 
     if not qr_data:
-        print("❌ Failed to get QR code data")
+        print(" Failed to get QR code data")
         return 1
 
     # Get PIN from user
@@ -284,7 +284,7 @@ def main():
     pin = input("Enter 6-digit PIN: ").strip()
 
     if len(pin) != 6 or not pin.isdigit():
-        print("❌ Invalid PIN format (must be 6 digits)")
+        print(" Invalid PIN format (must be 6 digits)")
         return 1
 
     # Decrypt token
@@ -296,7 +296,7 @@ def main():
         return 0
     else:
         print("\n" + "=" * 70)
-        print("❌ DECRYPTION FAILED")
+        print(" DECRYPTION FAILED")
         print("=" * 70)
         print()
         print("Possible reasons:")
