@@ -81,12 +81,12 @@ class SecureFileEraser:
             # Final deletion
             os.remove(file_path)
 
-            self.logger.debug(f"✓ Securely deleted: {file_path} ({file_size} bytes)")
+            self.logger.debug(f" Securely deleted: {file_path} ({file_size} bytes)")
             self.deleted_files.append(str(file_path))
             return True
 
         except Exception as e:
-            self.logger.error(f"✗ Failed to securely delete {file_path}: {e}")
+            self.logger.error(f" Failed to securely delete {file_path}: {e}")
             self.failed_files.append((str(file_path), str(e)))
             return False
 
@@ -111,7 +111,7 @@ class SecureFileEraser:
         for item in dir_path.rglob('*'):
             # Skip tokens directory if preserving
             if preserve_tokens and 'tokens' in item.parts:
-                self.logger.info(f"⚠️  Preserving token: {item}")
+                self.logger.info(f" Preserving token: {item}")
                 continue
 
             if item.is_file():
@@ -127,9 +127,9 @@ class SecureFileEraser:
                     continue
                 try:
                     item.rmdir()
-                    self.logger.debug(f"✓ Removed empty directory: {item}")
+                    self.logger.debug(f"Removed empty directory: {item}")
                 except Exception as e:
-                    self.logger.error(f"✗ Failed to remove directory {item}: {e}")
+                    self.logger.error(f"Failed to remove directory {item}: {e}")
 
         return (deleted_count, failed_count)
 
@@ -251,12 +251,12 @@ class GDPRCompliantDataEraser:
 
         self.logger.info("\nCompliance Status:")
         if total_failed == 0:
-            self.logger.info("  ✓ FR-8: Storage limitation COMPLIANT")
-            self.logger.info("  ✓ All biometric data deleted (YS v Minister)")
-            self.logger.info("  ✓ Secure erasure verified (DoD 5220.22-M)")
+            self.logger.info(" FR-8: Storage limitation COMPLIANT")
+            self.logger.info(" All biometric data deleted (YS v Minister)")
+            self.logger.info(" Secure erasure verified (DoD 5220.22-M)")
         else:
-            self.logger.warning(f"  ⚠️  {total_failed} deletion failures detected")
-            self.logger.warning("  ⚠️  Manual review required")
+            self.logger.warning(f" {total_failed} deletion failures detected")
+            self.logger.warning(" Manual review required")
 
         self.logger.info("=" * 70 + "\n")
 
@@ -290,16 +290,16 @@ def test_secure_deletion():
     success = eraser.secure_delete_file(test_file)
 
     if success:
-        print("✓ Secure deletion successful")
-        print("✓ File unrecoverable (3-pass DoD 5220.22-M)")
+        print(" Secure deletion successful")
+        print(" File unrecoverable (3-pass DoD 5220.22-M)")
 
         # Verify deletion
         if not test_file.exists():
-            print("✓ Forensic verification: File does not exist")
+            print(" Forensic verification: File does not exist")
         else:
-            print("✗ ERROR: File still exists!")
+            print(" ERROR: File still exists!")
     else:
-        print("✗ Secure deletion failed")
+        print(" Secure deletion failed")
 
     print("=" * 70)
 
