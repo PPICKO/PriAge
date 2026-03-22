@@ -9,18 +9,18 @@ A privacy-preserving age verification system that verifies if someone is 18+ **w
 
 ---
 
-## 🎯 Features
+## Features
 
-- ✅ **Privacy-First**: No personal data stored, only `is_adult` boolean
-- ✅ **GDPR Compliant**: Full compliance with EU data protection regulations
-- ✅ **Secure**: AES-256-GCM encryption + DoD 5220.22-M secure deletion
-- ✅ **Accurate**: Multi-model AI pipeline with anti-spoofing
-- ✅ **Fast**: ~50 seconds total verification time
-- ✅ **User-Friendly**: Both CLI and GUI interfaces
+- **Privacy-First**: No personal data stored, only `is_adult` boolean
+- **GDPR Compliant**: Full compliance with EU data protection regulations
+- **Secure**: AES-256-GCM encryption + DoD 5220.22-M secure deletion
+- **Accurate**: Multi-model AI pipeline with anti-spoofing
+- **Fast**: ~50 seconds total verification time
+- **User-Friendly**: Both CLI and GUI interfaces
 
 ---
 
-## 🔍 How It Works
+## How It Works
 
 PriAge uses a **5-phase verification pipeline**:
 
@@ -51,7 +51,7 @@ PriAge uses a **5-phase verification pipeline**:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone repository
@@ -69,7 +69,7 @@ python priAge_gui.py
 
 ---
 
-## 📋 Installation
+## Installation
 
 ### Prerequisites
 
@@ -116,7 +116,7 @@ python priAge_gui.py
 
 ---
 
-## 🔒 GDPR Compliance
+## GDPR Compliance
 
 | GDPR Article | Requirement | Implementation |
 |--------------|-------------|----------------|
@@ -162,7 +162,7 @@ python decrypt_qr_token.py
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **YOLOv8** - Object detection
 - **EasyOCR** - Text extraction
@@ -183,7 +183,7 @@ python decrypt_qr_token.py
 
 ---
 
-## ⚠️ Important
+## Important
 
 This is a **research/academic project**. Before production deployment:
 - Consult GDPR legal experts
@@ -192,7 +192,7 @@ This is a **research/academic project**. Before production deployment:
 
 ---
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file.
 
@@ -206,4 +206,4 @@ MIT License - see [LICENSE](LICENSE) file.
 
 ---
 
-**Built for Privacy and Security** 🔐
+**Built for Privacy and Security** 
