@@ -5,7 +5,6 @@ Uses Silent-Face-Anti-Spoofing model to detect real vs fake/screen
 This module wraps the minivision-ai Silent-Face-Anti-Spoofing library
 to detect presentation attacks (screens, printed photos).
 
-Author: Priscila PINTO ICKOWICZ
 """
 
 import os
