@@ -181,11 +181,11 @@ Then on GitHub:
 Privacy-Preserving Age Verification System
 
 ### Features
-- ✅ 5-phase verification pipeline
-- ✅ GDPR compliant (full data deletion)
-- ✅ AES-256-GCM encryption
-- ✅ Anti-spoofing protection
-- ✅ GUI and CLI interfaces
+- 5-phase verification pipeline
+- GDPR compliant (full data deletion)
+- AES-256-GCM encryption
+- Anti-spoofing protection
+- GUI and CLI interfaces
 
 ### Model Files
 Due to size, model files are distributed separately:
@@ -333,10 +333,10 @@ For issues with GitHub setup:
 ## Current Status
 
 Repository ready for:
-- ✅ Git initialization
-- ✅ GitHub push
-- ✅ Model file distribution
-- ✅ Public release
+- Git initialization
+- GitHub push
+- Model file distribution
+- Public release
 
 All dates updated to **2026** ✓
 
