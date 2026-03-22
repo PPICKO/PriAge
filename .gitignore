@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PriAge specific - Personal data outputs
+outputs/snapshot_*
+outputs/hologram_*
+outputs/facial_recognition/*
+outputs/tokens/*.png
+outputs/logs/*.log
+benchmark_results/*.json
+
+# Keep directory structure
+!outputs/tokens/.gitkeep
+!outputs/logs/.gitkeep
+!outputs/facial_recognition/.gitkeep
+!benchmark_results/.gitkeep
+
+# Model files (too large for git)
+*.pt
+*.pth
+*.onnx
+*.pb
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+.cache/
+
+# GDPR compliance - exclude actual personal data
+gdpr_cleanup_*.log
+gdpr_compliance_report_*.txt

@@ -1,0 +1,149 @@
+=================================================================
+PriAge - Privacy-Preserving Age Verification System
+Installation & Quick Start Guide
+=================================================================
+
+SYSTEM REQUIREMENTS
+-------------------
+- Python 3.8 - 3.11
+- Webcam (required for ID card and face capture)
+- 4GB RAM minimum (8GB recommended)
+- 500MB disk space for models and dependencies
+- Windows 10/11, Linux, or macOS
+
+
+INSTALLATION STEPS
+------------------
+
+1. Install Python Dependencies:
+
+   pip install -r requirements.txt
+
+   This will install:
+   - PyTorch (deep learning)
+   - Ultralytics (YOLO models)
+   - OpenCV (computer vision)
+   - EasyOCR (text extraction)
+   - FaceNet (facial recognition)
+   - CustomTkinter (GUI)
+   - Cryptography libraries
+
+
+2. Verify Installation:
+
+   python priAge_gui.py --help
+
+
+RUNNING THE APPLICATION
+-----------------------
+
+Option 1: Double-click the launcher
+   - Windows: run_priAge.bat
+   - Linux/Mac: ./run_priAge.sh
+
+Option 2: Command line
+   python priAge_gui.py
+
+
+VERIFICATION PROCESS
+--------------------
+
+Phase 1: ID Authenticity Check
+   - Show ID card hologram to camera
+   - Wait for auto-capture (≥80% confidence)
+
+Phase 2: Age Extraction  
+   - Position ID card flat and clear
+   - System extracts DOB and calculates age
+
+Phase 3: Facial Recognition
+   - Show your face to camera
+   - System matches to ID photo
+   - Anti-spoofing check performed
+
+Phase 4: Token Generation
+   - Encrypted QR code generated
+   - 6-digit PIN displayed
+   - Token contains ONLY is_adult boolean
+
+Phase 5: Data Deletion (Automatic)
+   - All personal data securely deleted
+   - Only encrypted token remains
+
+
+GDPR COMPLIANCE
+---------------
+
+✓ Data Minimization - Only is_adult boolean stored
+✓ Storage Limitation - Auto-deletion after verification
+✓ Right to Erasure - DoD 5220.22-M secure deletion
+✓ Biometric Protection - Article 9 compliance
+✓ Encryption - AES-256-GCM
+
+
+UTILITIES
+---------
+
+GDPR Data Cleanup:
+   python gdpr_data_cleanup.py --dry-run --all
+   python gdpr_data_cleanup.py --all --verify
+
+Token Decryption:
+   python decrypt_qr_token.py
+
+
+TROUBLESHOOTING
+---------------
+
+Camera not opening:
+   - Check camera permissions
+   - Verify camera is not in use by another app
+   - Try changing camera index in code
+
+Model loading errors:
+   - Ensure my_model.pt (50MB) is present
+   - Ensure holog_best.pt (6MB) is present
+   - Check Silent-Face-Anti-Spoofing folder exists
+
+Low confidence scores:
+   - Improve lighting
+   - Hold ID card steady
+   - Ensure hologram is visible
+   - Position face clearly
+
+
+FILES INCLUDED
+--------------
+
+Core Application:
+  ✓ priAge_gui.py - Main GUI application
+  ✓ Phase 1-5 modules (detection, recognition, token, deletion)
+  ✓ Models (my_model.pt, holog_best.pt)
+  ✓ Silent-Face-Anti-Spoofing library
+
+Utilities:
+  ✓ gdpr_data_cleanup.py - GDPR cleanup tool
+  ✓ decrypt_qr_token.py - Token decryption
+
+Documentation:
+  ✓ README.md - Application guide
+  ✓ GDPR_COMPLIANCE_README.md - Full GDPR documentation
+  ✓ requirements.txt - Python dependencies
+
+
+SUPPORT
+-------
+
+For issues:
+1. Check GDPR_COMPLIANCE_README.md for detailed docs
+2. Review logs in outputs/logs/
+3. Ensure all model files are present
+
+
+VERSION
+-------
+
+Version: 1.0
+Last Updated: March 2026
+
+=================================================================

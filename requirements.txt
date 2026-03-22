@@ -1,0 +1,24 @@
+# PriAge - Privacy-Preserving Age Verification System
+# Python Dependencies
+
+# Deep Learning & Computer Vision
+torch==2.2.2
+torchvision==0.17.2
+ultralytics==8.3.235
+opencv-python==4.9.0.80
+facenet-pytorch==2.6.0
+
+# OCR
+easyocr==1.7.2
+
+# GUI
+customtkinter==5.2.2
+Pillow>=10.0.0
+
+# Cryptography & Security
+cryptography==46.0.3
+qrcode==8.2
+pyzbar==0.1.9
+
+# Utilities
+numpy>=1.24.0
