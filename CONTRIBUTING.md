@@ -54,4 +54,4 @@ By contributing, you agree your contributions will be licensed under the MIT Lic
 
 ---
 
-Thank you for contributing! 🎉
+Thank you for contributing! 
