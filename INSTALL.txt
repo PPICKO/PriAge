@@ -74,11 +74,11 @@ Phase 5: Data Deletion (Automatic)
 GDPR COMPLIANCE
 ---------------
 
-✓ Data Minimization - Only is_adult boolean stored
-✓ Storage Limitation - Auto-deletion after verification
-✓ Right to Erasure - DoD 5220.22-M secure deletion
-✓ Biometric Protection - Article 9 compliance
-✓ Encryption - AES-256-GCM
+Data Minimization - Only is_adult boolean stored
+Storage Limitation - Auto-deletion after verification
+Right to Erasure - DoD 5220.22-M secure deletion
+Biometric Protection - Article 9 compliance
+Encryption - AES-256-GCM
 
 
 UTILITIES
@@ -116,19 +116,19 @@ FILES INCLUDED
 --------------
 
 Core Application:
-  ✓ priAge_gui.py - Main GUI application
-  ✓ Phase 1-5 modules (detection, recognition, token, deletion)
-  ✓ Models (my_model.pt, holog_best.pt)
-  ✓ Silent-Face-Anti-Spoofing library
+  - priAge_gui.py - Main GUI application
+  - Phase 1-5 modules (detection, recognition, token, deletion)
+  - Models (my_model.pt, holog_best.pt)
+  - Silent-Face-Anti-Spoofing library
 
 Utilities:
-  ✓ gdpr_data_cleanup.py - GDPR cleanup tool
-  ✓ decrypt_qr_token.py - Token decryption
+  - gdpr_data_cleanup.py - GDPR cleanup tool
+  - decrypt_qr_token.py - Token decryption
 
 Documentation:
-  ✓ README.md - Application guide
-  ✓ GDPR_COMPLIANCE_README.md - Full GDPR documentation
-  ✓ requirements.txt - Python dependencies
+  - README.md - Application guide
+  - GDPR_COMPLIANCE_README.md - Full GDPR documentation
+  - requirements.txt - Python dependencies
 
 
 SUPPORT
