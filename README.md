@@ -175,7 +175,7 @@ python decrypt_qr_token.py
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 - [GDPR_COMPLIANCE_README.md](GDPR_COMPLIANCE_README.md) - Complete GDPR guide
 - [INSTALL.txt](INSTALL.txt) - Installation instructions
@@ -198,7 +198,7 @@ MIT License - see [LICENSE](LICENSE) file.
 
 ---
 
-## 📧 Contact
+## Contact
 
 **Author:** Priscila PINTO ICKOWICZ
 
