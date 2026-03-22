@@ -30,8 +30,6 @@ Examples:
     # Delete everything with verification
     python gdpr_data_cleanup.py --all --verify
 
-Author: Priscila PINTO ICKOWICZ
-Date: 2024-12-10
 """
 
 import argparse
